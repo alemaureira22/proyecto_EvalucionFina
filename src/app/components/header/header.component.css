@@ -1,0 +1,14 @@
+.navbar-brand{
+    width: 80px;
+    height: 80px;
+}
+.img-navbar{
+
+    width: 100px;
+    height: 80px;
+}
+.between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
