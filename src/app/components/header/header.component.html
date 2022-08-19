@@ -4,12 +4,12 @@
         
        
         <div>
-        <a class="navbar-brand col-md-6"  routerLink="home">
-            <img class="img-navbar" src="../../../assets/img/images.jpg" alt="Logo NavBar">
+        <a class="navbar-brand col-md-4"  routerLink="home">
+            <img class="img-navbar" src="../../../assets/img/cine.png" alt="Logo NavBar">
         </a>
     </div>
 
-        <div class=" col-md-4 ml-auto" id="navbarNavDropdown">
+        <div class=" col-md-4 px-2 ml-auto" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="home">Home</a>
@@ -22,11 +22,22 @@
                     <a class="nav-link" routerLink="empleados">Productos</a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="nosotros">Carro</a>
+                   
+                    <a class="nav-link" routerLink="nosotros">
+                        <img class="img-car" src="../../../assets/img/carrito-de-compras.png" alt="Logo NavBar">
+                    </a>
                 </li>
-               
+                
             </ul>
         </div>
+        <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+            <div class=" nav-link float-end">
+               <p class="">{{hora | date:'hh:mm:ss a'}}</p>
+               <p class="">{{fecha | date}}</p>
+            </div>
+        </li>
+    </ul>
     </div>
 
 </nav>
