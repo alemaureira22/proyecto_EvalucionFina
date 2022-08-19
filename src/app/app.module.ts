@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { ProductosComponent } from './components/productos/productos.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
     FooterComponent,
     NosotrosComponent,
     CarritoComprasComponent,
-    Pagina404Component
+    Pagina404Component,
+    ProductosComponent,
+   
   ],
   imports: [
     BrowserModule,

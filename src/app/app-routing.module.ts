@@ -4,6 +4,8 @@ import { CarritoComprasComponent } from './components/carrito-compras/carrito-co
 import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { ProductosComponent } from './components/productos/productos.component';
+
 
 const routes: Routes = [
   {
@@ -13,10 +15,16 @@ const routes: Routes = [
   path: 'home', redirectTo: '',
 
   },
+
+  {
+    path: 'productos', component:ProductosComponent ,
+  
+    },
   {
     path: 'nosotros', component:NosotrosComponent ,
   
     },
+   
     {
       path: 'carritoCompras', component:CarritoComprasComponent,
     
