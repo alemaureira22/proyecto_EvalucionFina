@@ -6,37 +6,41 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ProductosComponent } from './components/productos/productos.component';
 
-
 const routes: Routes = [
   {
-    path: '', component: HomeComponent,
-   },
- {
-  path: 'home', redirectTo: '',
-
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'home',
+    redirectTo: '',
   },
 
   {
-    path: 'productos', component:ProductosComponent ,
-  
-    },
+    path: 'productos',
+    component: ProductosComponent,
+  },
   {
-    path: 'nosotros', component:NosotrosComponent ,
-  
-    },
-   
-    {
-      path: 'carritoCompras', component:CarritoComprasComponent,
-    
-      },
-      {
-        path: '404', component:Pagina404Component,
-      
-        },
+    path: 'nosotros',
+    component: NosotrosComponent,
+  },
+
+  {
+    path: 'carritoCompras',
+    component: CarritoComprasComponent,
+  },
+  {
+    path: '404',
+    component: Pagina404Component,
+  },
+  {
+    path: '**', redirectTo: '404',
+
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
