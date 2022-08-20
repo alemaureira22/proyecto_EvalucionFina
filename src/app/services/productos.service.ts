@@ -9,9 +9,7 @@ import {Productos} from './productos';
 @Injectable({
   providedIn: 'root'
 })
-@Injectable({
-  providedIn:'root'
-})
+
 export class ProductosService {
   private urlEndPoint: string = 'http://localhost:8088/api/productos';
 
@@ -24,7 +22,7 @@ export class ProductosService {
   } 
 
   getProducto(id: number): Observable<Productos> {
-    return this.http.get<Productos>(`${this.urlEndPoint}/${id}`).pipe()
+    return this.http.get<Productos>(`${this.urlEndPoint}/${id}`)
      
         
       }

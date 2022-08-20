@@ -1,6 +1,15 @@
+<div class="container mt-4 mb-4">
+    <div class="row py-5 mb-4 bg-dark text-warning rounded">
+        <div class="col-md-6 ">
+            <img class="img-fluid" src="" alt="Logo">
+        </div>
+        <div class="col-md-6">
+            <h1 class="text-center align-middle">Productos</h1>
+        </div>
+    </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div *ngFor="let producto of productos" class="col">
+  <div *ngFor="let producto of productos" class="col">
         <div class="card h-100">
             <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.nombreProducto}}">
             <div class="card-body">
