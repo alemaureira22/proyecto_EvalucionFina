@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { FormularioComponent } from './components/administrador/formulario/formulario.component';
 import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
@@ -28,6 +30,18 @@ const routes: Routes = [
   {
     path: 'carritoCompras',
     component: CarritoComprasComponent,
+  },
+  {
+    path: 'administradorProductos',
+    component: AdministradorComponent,
+  },
+  {
+    path: 'administradorProductos/formulario',
+    component: FormularioComponent,
+  },
+  {
+    path: 'administradorProductos/formulario/:id',
+    component:FormularioComponent,
   },
   {
     path: '404',
