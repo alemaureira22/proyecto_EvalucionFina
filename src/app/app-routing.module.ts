@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { AuthGuard } from '@auth0/auth0-angular';
 
 const routes: Routes = [
   {
@@ -34,14 +35,17 @@ const routes: Routes = [
   {
     path: 'administradorProductos',
     component: AdministradorComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'administradorProductos/formulario',
     component: FormularioComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'administradorProductos/formulario/:id',
     component:FormularioComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '404',
