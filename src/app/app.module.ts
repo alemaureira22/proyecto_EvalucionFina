@@ -15,7 +15,13 @@ import { AdministradorComponent } from './components/administrador/administrador
 import { FormularioComponent } from './components/administrador/formulario/formulario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderListPipe } from './pipes/order-list.pipe';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
+import localeES from '@angular/common/locales/es-CL';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
 
+registerLocaleData(localeES, 'es');
 
 
 @NgModule({
@@ -31,7 +37,7 @@ import { OrderListPipe } from './pipes/order-list.pipe';
     AdministradorComponent,
     FormularioComponent,
     OrderListPipe,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -39,9 +45,15 @@ import { OrderListPipe } from './pipes/order-list.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    AuthModule.forRoot(environment.auth0),
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID, 
+      useValue: 'es-CL'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
