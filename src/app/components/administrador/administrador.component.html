@@ -1,0 +1,70 @@
+<div class="container mt-4 mb-4 bg-dark text-white text-white py-3 rounded">
+    <div class="row align-middle">
+        <div class="col-md-6 align-middle">
+            <h1>{{ titulo }}</h1>
+            <h5 class="text-muted">Se han encontrado {{ productos.length }} {{ productos.length == 1 ? " registro" : " registros"}}</h5>
+        </div>
+        <div class="col-md-6 text-end align-middle">
+            <button class="btn btn-outline-primary " type="button" [routerLink]="['/administradorProductos/formulario']">
+                <span class="fs-1">
+                    agregar productos
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="productos.length > 0; else NoHayProductos" class="container mt-4 mb-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th (click)="ordenarListadoProductos('id')">ID</th>
+                    <th (click)="ordenarListadoProductos('nombreProducto')">Nombre producto</th>
+                    <th (click)="ordenarListadoProductos('descripcionProducto')">Descripción</th>
+                    <th (click)="ordenarListadoProductos('precio')">Precio</th>
+                    <th (click)="ordenarListadoProductos('stock')">Stock</th>
+                    <th>URL imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="align-middle" *ngFor="let producto of productos | orderList : optionSort.property: optionSort.order">
+                    <td>{{producto.id}}</td>
+                    <td>{{producto.nombreProducto}}</td>
+                    <td>{{producto.descripcionProducto}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.stock }}</td>
+                    <td>{{producto.imagen}}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-6 text-center mb-1">
+                                <button class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="botton" title="Editar" [routerLink]="['/administradorProductos/formulario',producto.id]">
+                                    Editar
+                                </button>
+                            </div>
+                            <div class="col-md-6 text-center mb-1">
+                                <button class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="botton" title="Eliminar" (click)="eliminarProducto(producto)">
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #NoHayProductos>
+    <div class="container mt-4 mb-4 py-4 rounded">
+        <div class="card">
+            <div class="card-header text-center">
+                <span class="text-warning fs-1">
+                    No hay productos
+                </span>
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Actualmente no hay datos para mostrar...</h5>
+            </div>
+        </div>        
+    </div>
+</ng-template>

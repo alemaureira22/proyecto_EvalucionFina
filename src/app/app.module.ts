@@ -11,6 +11,10 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { FormularioComponent } from './components/administrador/formulario/formulario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderListPipe } from './pipes/order-list.pipe';
 
 
 
@@ -24,13 +28,17 @@ import { ProductosComponent } from './components/productos/productos.component';
     CarritoComprasComponent,
     Pagina404Component,
     ProductosComponent,
+    AdministradorComponent,
+    FormularioComponent,
+    OrderListPipe,
     
-   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     
   ],
   providers: [],
