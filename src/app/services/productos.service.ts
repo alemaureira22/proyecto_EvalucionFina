@@ -11,6 +11,7 @@ import {Productos} from './productos';
 })
 
 export class ProductosService {
+
   private urlEndPoint: string = 'http://localhost:8088/api/productos';
 
   private httpHeaders = new HttpHeaders({'Content-type' : 'application/json'});  
@@ -26,7 +27,7 @@ export class ProductosService {
      
         
       }
-    
+      
     }
 
   

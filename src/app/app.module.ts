@@ -11,6 +11,10 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarritoServiceService } from './services/carrito-service.service';
+
+
 
 
 
@@ -26,14 +30,20 @@ import { ProductosComponent } from './components/productos/productos.component';
     ProductosComponent,
     
    
+   
+    
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+  
+
     
   ],
-  providers: [],
+  providers: [CarritoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

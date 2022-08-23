@@ -1,1 +1,62 @@
-<p>ola k aze</p>
+<div class="container mt-4 mb-4">
+  <div class="table-responsive">
+    <h4>Carrito de Compras</h4>
+    <div *ngIf="carrito.length > 0; else carritoSinProductos">
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Accion</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+
+        <tbody *ngFor="let producto of carrito; let i = index">
+          <tr>
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ producto.nombreProducto }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td table table-bordered table-hover>
+              <button
+                class="btn btn-info btn-sm m-1"
+                (click)="sumarProducto(producto.id)"
+              >
+                +
+              </button>
+              <button
+                class="btn btn-danger btn-sm m-1"
+                (click)="restarProducto(producto.id)"
+              >
+                -
+              </button>
+            </td>
+            <td>{{ producto.precio * producto.cantidad }}</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="2">Total productos</th>
+            <td>{{ cantidadesTotal }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="vaciarCarrito()">
+                vaciar todo
+              </button>
+            </td>
+            <td class="font-weight-bold">
+              $ <span>{{ totalPrecioCarrito }} </span>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<ng-template #carritoSinProductos>
+  <tr>
+    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+  </tr>
+</ng-template>
+<app-productos (eventoDeCompra)="recibirPedidoCompra($event)"></app-productos>
