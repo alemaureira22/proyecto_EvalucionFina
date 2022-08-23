@@ -11,6 +11,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarritoServiceService } from './services/carrito-service.service';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { FormularioComponent } from './components/administrador/formulario/formulario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,7 +22,6 @@ import { environment } from 'src/environments/environment';
 import localeES from '@angular/common/locales/es-CL';
 import { registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
-
 registerLocaleData(localeES, 'es');
 
 
@@ -38,11 +39,19 @@ registerLocaleData(localeES, 'es');
     FormularioComponent,
     OrderListPipe,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+  
+
+    
+  ],
+  providers: [CarritoServiceService],
+
     ReactiveFormsModule,
     FormsModule,
     AuthModule.forRoot(environment.auth0),
@@ -54,6 +63,7 @@ registerLocaleData(localeES, 'es');
       useValue: 'es-CL'
     }
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

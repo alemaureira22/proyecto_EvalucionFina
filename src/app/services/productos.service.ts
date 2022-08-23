@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 
 export class ProductosService {
+
   private urlEndPoint: string = 'http://localhost:8088/api/productos';
 
   private httpHeaders = new HttpHeaders({'Content-type' : 'application/json'});  
@@ -24,8 +25,8 @@ export class ProductosService {
 
   getProducto(id: number): Observable<Productos> {
     return this.http.get<Productos>(`${this.urlEndPoint}/${id}`)
-  }
-    
+       }
+      
   deleteProducto(id:number): Observable<Productos>{
     return this.http.delete<Productos>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders}).pipe(
       catchError(e => {
@@ -58,3 +59,4 @@ export class ProductosService {
     );
   }
 }
+

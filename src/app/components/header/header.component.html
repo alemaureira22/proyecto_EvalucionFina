@@ -1,8 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+ 
     <div class="container ">
-
-
-        <div>
+         <div>
             <a class="navbar-brand col-md-4" routerLink="home">
                 <img class="img-navbar" src="../../../assets/img/cine.png" alt="Logo NavBar">
             </a>
@@ -17,17 +15,14 @@
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="nosotros">Nosotros</a>
                 </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="productos">Productos</a>
-                </li>
+              
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="administradorProductos">Administrador</a>
                 </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="carritoCompras">
-                        <img class="img-car" src="../../../assets/img/carrito-de-compras.png" alt="Logo NavBar">
-                    </a>
-                </li>
+                   <li class="nav-item" routerLinkActive="active">
+                 <a class="nav-link" routerLink="carritoCompras">Tienda GoloCINE</a>
+                 </li>
+               
                 <li class="nav-item">
                     <a class="btn btn-outline-light m-2" (click)="logout()" *ngIf="isAuthenticated">Logout</a>
                 </li>

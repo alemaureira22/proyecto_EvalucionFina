@@ -19,10 +19,10 @@ const routes: Routes = [
     redirectTo: '',
   },
 
-  {
-    path: 'productos',
-    component: ProductosComponent,
-  },
+  //  {
+  //    path: 'productos',
+  //    component: ProductosComponent,
+  //  },
   {
     path: 'nosotros',
     component: NosotrosComponent,
