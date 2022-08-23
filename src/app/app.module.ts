@@ -13,9 +13,16 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarritoServiceService } from './services/carrito-service.service';
-
-
-
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { FormularioComponent } from './components/administrador/formulario/formulario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderListPipe } from './pipes/order-list.pipe';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
+import localeES from '@angular/common/locales/es-CL';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
+registerLocaleData(localeES, 'es');
 
 
 @NgModule({
@@ -28,11 +35,11 @@ import { CarritoServiceService } from './services/carrito-service.service';
     CarritoComprasComponent,
     Pagina404Component,
     ProductosComponent,
-    
-   
-   
-    
-   
+    AdministradorComponent,
+    FormularioComponent,
+    OrderListPipe,
+
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,19 @@ import { CarritoServiceService } from './services/carrito-service.service';
     
   ],
   providers: [CarritoServiceService],
+
+    ReactiveFormsModule,
+    FormsModule,
+    AuthModule.forRoot(environment.auth0),
+
+  ],
+  providers: [
+    {
+      provide: LOCALE_ID, 
+      useValue: 'es-CL'
+    }
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
