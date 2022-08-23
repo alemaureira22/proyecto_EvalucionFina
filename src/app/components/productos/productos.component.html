@@ -3,16 +3,19 @@
   <hr>
   <div class="row" >        
       
-          <div class="col-12 col-md-4 mb-2" *ngFor="let producto of productos">
-              <div class="card">
+          <div class="col-12 col-md-4 mb-2" *ngFor="let producto of productos | paginate: { itemsPerPage: 3, currentPage: page }">
+              <div class="card h-100">
                   <img src= {{producto.imagen}}  class="card-img-top" alt="...">
                   <div class="card-body">
-                      <h5 class="card-title">{{ producto.nombreProducto}}</h5>
-                      <p class="card-text"> {{producto.precio}} </p>                        
-                      <button class="btn btn-primary" id={{producto.id}} (click)="enviarPedidoCompra(producto.id)">Comprar</button>
+                      <h5 class="card-title fs-5">{{ producto.nombreProducto}}</h5>
+                      <p class="card-text fs-6"> {{producto.precio}} </p>                        
+                      <button class="btn btn-primary float-end" id={{producto.id}} (click)="enviarPedidoCompra(producto.id)">Comprar</button>
                   </div>
               </div>
           </div>        
       
   </div>
+</div>
+<div class="text-center m-4">
+    <pagination-controls (pageChange)="page = $event" previousLabel="Ant" nextLabel="Sig"></pagination-controls>
 </div>

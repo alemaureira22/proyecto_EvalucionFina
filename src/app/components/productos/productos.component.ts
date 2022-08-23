@@ -18,6 +18,7 @@ export class ProductosComponent implements OnInit {
   producto :any =[];
   id:any="";
   productoComprado:any={}
+  public page !:number;
 
   enviarPedidoCompra(value: number) { //envia el codigo del producto a comprar (como un evento) al componente carrito
     this.eventoDeCompra.emit(value);
