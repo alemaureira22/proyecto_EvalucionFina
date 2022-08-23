@@ -6,9 +6,9 @@ export const environment = {
   production: false,
   auth0: {
 
-    domain: 'dev-angular-ntt.us.auth0.com',
+    domain: 'dev-wgrwm7qi.us.auth0.com',
 
-    clientId: '2spAzjljlwrSINqmLiSpY8LyE5Hl0MrS',
+    clientId: 'THlRPPNuYS2KzfEi6SzXTIT5wuuwbTOz',
 
   }
 };

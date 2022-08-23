@@ -22,6 +22,7 @@ import { environment } from 'src/environments/environment';
 import localeES from '@angular/common/locales/es-CL';
 import { registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
+import {NgxPaginationModule} from 'ngx-pagination';
 registerLocaleData(localeES, 'es');
 
 
@@ -46,24 +47,27 @@ registerLocaleData(localeES, 'es');
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserModule, 
+    NgxPaginationModule,
+    AuthModule.forRoot(environment.auth0),
   
 
     
   ],
-  providers: [CarritoServiceService],
-
+  providers: [
+    CarritoServiceService,
     ReactiveFormsModule,
     FormsModule,
-    AuthModule.forRoot(environment.auth0),
-
-  ],
-  providers: [
+    
+   
     {
       provide: LOCALE_ID, 
       useValue: 'es-CL'
     }
-  ],
-
+],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

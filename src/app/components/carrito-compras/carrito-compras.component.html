@@ -1,7 +1,8 @@
 <div class="container mt-4 mb-4">
   <div class="table-responsive">
-    <h4>Carrito de Compras</h4>
+ 
     <div *ngIf="carrito.length > 0; else carritoSinProductos">
+      <h4 class="fs-4 fw-bold text-center">Carrito de Compras</h4>
       <table class="table table-bordered table-hover">
         <thead class="table-dark">
           <tr>
@@ -18,7 +19,7 @@
             <th scope="row">{{ i + 1 }}</th>
             <td>{{ producto.nombreProducto }}</td>
             <td>{{ producto.cantidad }}</td>
-            <td table table-bordered table-hover>
+            <td class="text-center">
               <button
                 class="btn btn-info btn-sm m-1"
                 (click)="sumarProducto(producto.id)"
@@ -40,9 +41,12 @@
           <tr>
             <th scope="row" colspan="2">Total productos</th>
             <td>{{ cantidadesTotal }}</td>
-            <td>
-              <button class="btn btn-danger btn-sm" (click)="vaciarCarrito()">
-                vaciar todo
+            <td class="text-center">
+              <button class="btn btn-info btn-sm m-1 " (click)="vaciarCarrito()">
+                Pagar
+              </button>
+              <button class="btn btn-danger btn-sm m-1" (click)="vaciarCarrito()">
+                Vaciar Carrito
               </button>
             </td>
             <td class="font-weight-bold">
@@ -55,8 +59,8 @@
   </div>
 </div>
 <ng-template #carritoSinProductos>
-  <tr>
-    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-  </tr>
+  
+    <h4 class="fs-5 fw-bold text-center" >Carrito vacío - comience a comprar!</h4>
+  
 </ng-template>
 <app-productos (eventoDeCompra)="recibirPedidoCompra($event)"></app-productos>
